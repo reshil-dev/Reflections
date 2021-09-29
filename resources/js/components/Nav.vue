@@ -9,6 +9,9 @@
         <router-link tag="li" to="/tasks" exact>
                 <a> Tasks </a>
         </router-link>
+        <router-link tag="li" to="/tasks/priority" exact>
+                <a> Priority Task </a>
+        </router-link>
       </ul>
 
     </div>

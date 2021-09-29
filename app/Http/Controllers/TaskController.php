@@ -22,9 +22,10 @@ class TaskController extends BaseController
 
     public function priorityTask(Request $request)
     {
-        $timeLeftToday = 5;
-        $timeForTomorrow = 8;
-        $today = '2021-07-30 19:07:22';
+        $data = $this->validateProject();
+        $timeLeftToday = $request['time_today'];
+        $timeForTomorrow = $request['time_tmr'] ?? null;
+        $today = $request['today'];
         $task = $this->getSuitabelTask($timeLeftToday, $timeForTomorrow, $today);
         return $this->handleResponse(new TaskResource($task), 'Task retrieved!');
     }
@@ -52,5 +53,15 @@ class TaskController extends BaseController
             }
         }
         return $task;
+    }
+
+    protected function validateProject(): array
+    {
+        return request()->validate([
+            'time_today' => [
+                'required',
+            ],
+            'today' => 'required|date'
+        ]);
     }
 }
