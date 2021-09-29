@@ -20,7 +20,7 @@ class CreateTasksTable extends Migration
             $table->string('status');
             $table->timestamp('due_date');
             $table->integer('priority');
-            $table->integer('estimation');
+            $table->integer('estimate');
             $table->timestamps();
         });
     }
