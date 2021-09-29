@@ -29,6 +29,8 @@ Route::get('/tasks/import', function () {
     //so that we can reuse it when new json files comes in, adding an imported flag will avaid duplications
     //Its always good to move the code to controller.
 
+    return response('Already imported'); //already imported
+
     $json = Storage::disk('local')->get('todo.json');
     $tasks = json_decode($json, true);
 
