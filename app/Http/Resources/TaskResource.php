@@ -17,8 +17,10 @@ class TaskResource extends JsonResource
             'id' => $this->id,
             'title' => $this->title,
             'description' => $this->description,
-            'created_at' => $this->created_at->diffForHumans(),
-            'updated_at' => $this->updated_at->diffForHumans(),
+            'status' => $this->status,
+            'due_date' => $this->due_date,
+            'priority' => $this->priority,
+            'estimate' => $this->estimate,
         ];
     }
 }

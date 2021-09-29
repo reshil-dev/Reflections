@@ -8,8 +8,10 @@
           <th>ID</th>
           <th>Title</th>
           <th>Description</th>
-          <th>Created At</th>
-          <th>Updated At</th>
+          <th>Status</th>
+          <th>Due Date</th>
+          <th>Priority</th>
+          <th>Estimation</th>
         </tr>
       </thead>
       <tbody>
@@ -17,8 +19,10 @@
           <td>{{ task.id }}</td>
           <td>{{ task.title }}</td>
           <td>{{ task.description }}</td>
-          <td>{{ task.created_at }}</td>
-          <td>{{ task.updated_at }}</td>
+          <td>{{ task.status }}</td>
+          <td>{{ task.due_date }}</td>
+          <td>{{ task.priority }}</td>
+          <td>{{ task.estimate }}</td>
         </tr>
       </tbody>
     </table>
