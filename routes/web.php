@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Storage;
 Auth::routes();
 
 Route::get('/tasks', [App\Http\Controllers\TaskController::class, 'index'])->name('task');
+Route::get('/tasks/priority', [App\Http\Controllers\TaskController::class, 'priorityTask'])->name('priority');
 
 Route::get('{any}', function () {
     return view('api.app');
